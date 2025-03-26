@@ -34,28 +34,6 @@ export const LoginForm = ({ setAccount }) => {
     }
   }
 
-  const firebase = async (token) => {
-    dispatch(setLoad(false));
-
-    const url = `/api/v1/auth/login/firebase`;
-    
-    await api.post(url, { token })
-      .then((res) => trigger(res))
-      .catch((err) => {
-        appError(err);
-        Swal.fire({
-          toast: true,
-          position: 'bottom-right',
-          icon: 'error',
-          text: err.response.data.message,
-          showConfirmButton: false,
-          timer: 5000,
-          timerProgressBar: true,
-        });
-      })
-      .finally(() => dispatch(setLoad(true)));
-  }
-
   const submit = async (data) => {
     dispatch(setLoad(false));
     
@@ -124,6 +102,7 @@ export const LoginForm = ({ setAccount }) => {
                   required: 'La contraseña es requerida',
                   minLength: {
                     value: 8,
+                    message: 'Mínimo 8 caracteres',
                   },
                 },
               },

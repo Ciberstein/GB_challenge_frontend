@@ -78,7 +78,7 @@ export const UpdatePersonalDataForm = () => {
                 required: 'El nombre es requerido',
                 minLength: {
                   value: 2,
-                  message: 'Must be at least 2 characters',
+                  message: 'Mínimo 2 caracteres',
                 },
               },
             },
@@ -99,7 +99,7 @@ export const UpdatePersonalDataForm = () => {
                 required: 'El apellido es requerido',
                 minLength: {
                   value: 2,
-                  message: 'Must be at least 2 characters',
+                  message: 'Mínimo 2 caracteres',
                 },
               },
             },

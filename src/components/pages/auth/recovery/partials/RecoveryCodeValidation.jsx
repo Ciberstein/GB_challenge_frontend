@@ -90,7 +90,7 @@ export const RecoveryCodeValidation = ({ account }) => {
                 required: 'La contraseña es requerida',
                 minLength: {
                   value: 8,
-                  message: 'Must be at least 8 characters',
+                  message: 'Mínimo 8 caracteres',
                 },
               },
             },
@@ -117,7 +117,7 @@ export const RecoveryCodeValidation = ({ account }) => {
                 required: 'La contraseña es requerida',
                 minLength: {
                   value: 8,
-                  message: 'Must be at least 8 characters',
+                  message: 'Mínimo 8 caracteres',
                 },
               },
             },

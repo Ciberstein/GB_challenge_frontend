@@ -76,7 +76,7 @@ export const RegisterForm = ({ setAccount }) => {
                 required: 'El nombre es requerido',
                 minLength: {
                   value: 2,
-                  message: 'Must be at least 2 characters',
+                  message: 'Mínimo 2 caracteres',
                 },
               },
             },
@@ -96,7 +96,7 @@ export const RegisterForm = ({ setAccount }) => {
                 required: 'El apellido es requerido',
                 minLength: {
                   value: 2,
-                  message: 'Must be at least 2 characters',
+                  message: 'Mínimo 2 caracteres',
                 },
               },
             },
@@ -144,7 +144,7 @@ export const RegisterForm = ({ setAccount }) => {
                 required: 'La contraseña es requerida',
                 minLength: {
                   value: 8,
-                  message: 'Must be at least 8 characters',
+                  message: 'Mínimo 8 caracteres',
                 },
               },
             },
@@ -170,7 +170,7 @@ export const RegisterForm = ({ setAccount }) => {
                 required: 'La contraseña es requerida',
                 minLength: {
                   value: 8,
-                  message: 'Must be at least 8 characters',
+                  message: 'Mínimo 8 caracteres',
                 },
               },
             },

@@ -77,7 +77,7 @@ export const UpdatePasswordForm = ({ setPassword }) => {
                         required: 'Actual La contraseña es requerida',
                         minLength: {
                             value: 8,
-                            message: 'Must be at least 8 characters',
+                            message: 'Mínimo 8 caracteres',
                         },
                     },
                     },
@@ -108,10 +108,10 @@ export const UpdatePasswordForm = ({ setPassword }) => {
                         errors: {
                         function: errors,
                         rules: {
-                            required: 'New La contraseña es requerida',
+                            required: 'La contraseña nueva es requerida',
                             minLength: {
                             value: 8,
-                            message: 'Must be at least 8 characters',
+                            message: 'Mínimo 8 caracteres',
                             },
                         },
                         },
@@ -141,10 +141,10 @@ export const UpdatePasswordForm = ({ setPassword }) => {
                         errors: {
                             function: errors,
                             rules: {
-                                required: 'New password repeat is required',
+                                required: 'Repita la nueva contraseña',
                                 minLength: {
                                     value: 8,
-                                    message: 'Must be at least 8 characters',
+                                    message: 'Mínimo 8 caracteres',
                                 },
                             },
                         },
