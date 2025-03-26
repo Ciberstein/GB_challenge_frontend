@@ -9,6 +9,7 @@ import { eventsThunk } from '../../../../../store/slices/events.slice'
 import Swal from 'sweetalert2'
 import { useDispatch } from 'react-redux'
 import { useForm } from 'react-hook-form'
+import appError from '../../../../../utils/appError'
 
 export const CreateEvent = ({ open, setOpen }) => {
 

@@ -75,7 +75,7 @@ export const UpdatePersonalDataForm = () => {
             errors: {
               function: errors,
               rules: {
-                required: 'First name is required',
+                required: 'El nombre es requerido',
                 minLength: {
                   value: 2,
                   message: 'Must be at least 2 characters',
@@ -96,7 +96,7 @@ export const UpdatePersonalDataForm = () => {
             errors: {
               function: errors,
               rules: {
-                required: 'Last name is required',
+                required: 'El apellido es requerido',
                 minLength: {
                   value: 2,
                   message: 'Must be at least 2 characters',

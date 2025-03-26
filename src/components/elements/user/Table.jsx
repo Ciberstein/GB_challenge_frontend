@@ -216,7 +216,7 @@ export const Table = ({
 									icon={<MagnifyingGlassIcon className="size-5" />}
 									id="searchInput"
 									name="searchInput"
-									placeholder={t("Search")}
+									placeholder={"Buscar"}
 									className="!rounded-full px-3"
 									size={size}
 									value={searchText}
@@ -307,7 +307,7 @@ export const Table = ({
                 <td colSpan={cols + 1} aria-label="no-results">
                   <div className="flex flex-col flex-grow justify-center items-center gap-2 p-10 text-xl font-medium">
                     <SearchOffOutlined />
-										<h1>{t("No results found")}</h1>
+										<h1>{t("No hay resultados")}</h1>
                   </div>
                 </td>
               </tr>)}

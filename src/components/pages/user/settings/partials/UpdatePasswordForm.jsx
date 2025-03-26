@@ -74,7 +74,7 @@ export const UpdatePasswordForm = ({ setPassword }) => {
                     errors: {
                     function: errors,
                     rules: {
-                        required: 'Actual password is required',
+                        required: 'Actual La contraseña es requerida',
                         minLength: {
                             value: 8,
                             message: 'Must be at least 8 characters',
@@ -108,7 +108,7 @@ export const UpdatePasswordForm = ({ setPassword }) => {
                         errors: {
                         function: errors,
                         rules: {
-                            required: 'New password is required',
+                            required: 'New La contraseña es requerida',
                             minLength: {
                             value: 8,
                             message: 'Must be at least 8 characters',

@@ -73,7 +73,7 @@ export const RegisterForm = ({ setAccount }) => {
             errors: {
               function: errors,
               rules: {
-                required: 'First name is required',
+                required: 'El nombre es requerido',
                 minLength: {
                   value: 2,
                   message: 'Must be at least 2 characters',
@@ -93,7 +93,7 @@ export const RegisterForm = ({ setAccount }) => {
             errors: {
               function: errors,
               rules: {
-                required: 'Last name is required',
+                required: 'El apellido es requerido',
                 minLength: {
                   value: 2,
                   message: 'Must be at least 2 characters',
@@ -115,7 +115,7 @@ export const RegisterForm = ({ setAccount }) => {
               errors: {
                 function: errors,
                 rules: {
-                  required: 'Email is required',
+                  required: 'El email es requerido',
                   validate: {
                     isEmailValid: (value) => {
                       if (!isEmailValid(value)) {
@@ -141,7 +141,7 @@ export const RegisterForm = ({ setAccount }) => {
             errors: {
               function: errors,
               rules: {
-                required: 'Password is required',
+                required: 'La contraseña es requerida',
                 minLength: {
                   value: 8,
                   message: 'Must be at least 8 characters',
@@ -167,7 +167,7 @@ export const RegisterForm = ({ setAccount }) => {
             errors: {
               function: errors,
               rules: {
-                required: 'Password is required',
+                required: 'La contraseña es requerida',
                 minLength: {
                   value: 8,
                   message: 'Must be at least 8 characters',

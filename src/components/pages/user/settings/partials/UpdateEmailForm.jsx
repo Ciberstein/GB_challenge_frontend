@@ -104,7 +104,7 @@ export const UpdateEmailForm = ({ setEmail }) => {
             errors: {
               function: errors,
               rules: {
-                required: 'Email is required',
+                required: 'El email es requerido',
                 validate: {
                   isEmailValid: (value) => {
                     if (!isEmailValid(value)) {
@@ -129,7 +129,7 @@ export const UpdateEmailForm = ({ setEmail }) => {
             errors: {
               function: errors,
               rules: {
-                required: 'Email is required',
+                required: 'El email es requerido',
                 validate: {
                   isEmailValid: (value) => {
                     if (!isEmailValid(value)) {

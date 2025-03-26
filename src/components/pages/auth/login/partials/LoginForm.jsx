@@ -96,11 +96,11 @@ export const LoginForm = ({ setAccount }) => {
               errors: {
                 function: errors,
                 rules: {
-                  required: 'Email is required',
+                  required: 'El email es requerido',
                   validate: {
                     isEmailValid: (value) => {
                       if (!isEmailValid(value)) {
-                        return 'Invalid email format';
+                        return 'Formato de email inválido';
                       }
                       return true;
                     },
@@ -121,7 +121,7 @@ export const LoginForm = ({ setAccount }) => {
               errors: {
                 function: errors,
                 rules: {
-                  required: 'Password is required',
+                  required: 'La contraseña es requerida',
                   minLength: {
                     value: 8,
                   },
@@ -130,7 +130,7 @@ export const LoginForm = ({ setAccount }) => {
             }}
             helperLink={{
               url: '/recovery',
-              text: 'Forgot password?'
+              text: 'Recuperar contraseña'
             }}
             element={
               <button type="button" onClick={() => setHide(!hide)} >

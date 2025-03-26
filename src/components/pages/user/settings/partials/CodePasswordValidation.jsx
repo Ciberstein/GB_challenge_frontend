@@ -63,7 +63,7 @@ export const CodePasswordValidation = ({ setPassword, password }) => {
     <form className="flex flex-col gap-4 justify-center items-center" onSubmit={handleSubmit(submit)}>
       <EnvelopeIcon className="size-20"/>
       <p className="text-sm text-center">
-        {"We have sent a verification code to your email address"} <br /><b>{account?.email}</b>, {"please enter it here."}
+        {"Hemos enviado un código de verificación a tu correo"} <br /><b>{account?.email}</b>, {"por favor ingresalo aquí."}
       </p>
       <Input
         icon={<LockClosedIcon className="size-6" />}
@@ -71,14 +71,14 @@ export const CodePasswordValidation = ({ setPassword, password }) => {
         name="code"
         maxLength="6"
         full
-        label={"Verification code"}
-        helperLink={{ url: "", text: <button type="button" onClick={reSendCode}>{"Send again"}</button> }}
+        label={"Código de verificación"}
+        helperLink={{ url: "", text: <button type="button" onClick={reSendCode}>{"Enviar de nuevo"}</button> }}
         register={{
           function: register,
           errors: {
             function: errors,
             rules: {
-              required: 'Code is required',
+              required: 'El código es requerido',
             },
           },
         }}

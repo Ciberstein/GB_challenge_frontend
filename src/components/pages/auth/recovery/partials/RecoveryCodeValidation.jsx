@@ -70,8 +70,8 @@ export const RecoveryCodeValidation = ({ account }) => {
       >
         <EnvelopeIcon className="size-20"/>
         <p className="text-sm text-center">
-          {"We have sent a verification code to your email address"} <br />
-          <b>{account.email}</b>, {"please enter it here."}
+          {"Hemos enviado un código de verificación a tu correo"} <br />
+          <b>{account.email}</b>, {"por favor ingresalo aquí."}
         </p>
 
         <Input
@@ -87,7 +87,7 @@ export const RecoveryCodeValidation = ({ account }) => {
             errors: {
               function: errors,
               rules: {
-                required: 'Password is required',
+                required: 'La contraseña es requerida',
                 minLength: {
                   value: 8,
                   message: 'Must be at least 8 characters',
@@ -114,7 +114,7 @@ export const RecoveryCodeValidation = ({ account }) => {
             errors: {
               function: errors,
               rules: {
-                required: 'Password is required',
+                required: 'La contraseña es requerida',
                 minLength: {
                   value: 8,
                   message: 'Must be at least 8 characters',
@@ -135,14 +135,14 @@ export const RecoveryCodeValidation = ({ account }) => {
           name="code"
           maxLength="6"
           full
-          label={"Verification code"}
-          helperLink={{ url: "", text: <button type="button" onClick={reSendCode}>{"Send again"}</button> }}
+          label={"Código de verificación"}
+          helperLink={{ url: "", text: <button type="button" onClick={reSendCode}>{"Enviar de nuevo"}</button> }}
           register={{
             function: register,
             errors: {
               function: errors,
               rules: {
-                required: 'Code is required',
+                required: 'El código es requerido',
               },
             },
           }}

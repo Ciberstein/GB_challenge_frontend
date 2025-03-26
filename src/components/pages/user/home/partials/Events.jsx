@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { Card } from '../../../../elements/user/Card'
 import { BookmarkSlashIcon, CalendarIcon, UsersIcon } from '@heroicons/react/24/outline';
-import cutString from '../../../../../utils/cutString';
 import convertDate from '../../../../../utils/convertDate';
 import Modal from '../../../../elements/user/Modal';
 import { Button } from '../../../../elements/user/Button';
