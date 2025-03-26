@@ -16,9 +16,9 @@ export const { setEvents } = eventSlice.actions;
 export default eventSlice.reducer;
 
 export const eventsThunk =
-  () => async (dispatch) => {
+  (user = false) => async (dispatch) => {
     dispatch(setLoad(false));
-    const url = `/api/v1/events/`;
+    const url = `/api/v1/events/${user ? 'user' : 'all'}/`;
     await api
       .get(url)
       .then((res) => dispatch(setEvents(res.data)))

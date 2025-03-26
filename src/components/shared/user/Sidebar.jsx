@@ -27,8 +27,8 @@ export const ContentSidebar = () => {
       icon: <UsersIcon className="size-6" />
     },
     {
-      label: 'Solicitudes',
-      route: '/requests',
+      label: 'Eventos',
+      route: '/events',
       icon: <QueueListIcon className="size-6" />
     },
   ];

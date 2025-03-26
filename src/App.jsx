@@ -13,7 +13,7 @@ import { RecoveryPage } from "./components/pages/auth/recovery/RecoveryPage";
 import { ProtectedRoutes as UserProtectedRoutes } from "./components/pages/session/user/ProtectedRoutes";
 import { HomePage as UserHomePage } from "./components/pages/user/home/HomePage";
 import { ReservesPage as UserReservesPage } from "./components/pages/user/reserves/ReservesPage";
-import { Requests as UserRequests } from "./components/pages/user/requests/Requests";
+import { EventsPage as UserEventsPage } from "./components/pages/user/events/EventsPage";
 import { SettingsPage as UserSettingsPage} from "./components/pages/user/settings/SettingsPage";
 {/* End User Imports */}
 
@@ -34,7 +34,7 @@ function App() {
       <Route path="/" element={<UserProtectedRoutes />}>
         <Route path="/" element={<UserHomePage />}/>
         <Route path="/reserves" element={<UserReservesPage />}/>
-        <Route path="/requests" element={<UserRequests />}/>
+        <Route path="/events" element={<UserEventsPage />}/>
         <Route path="/settings" element={<UserSettingsPage />}/>
       </Route>
     </Routes>

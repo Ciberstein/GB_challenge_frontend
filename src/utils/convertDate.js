@@ -11,7 +11,9 @@ const convertDate = (
   const OriginalDate = new Date(date);
   return OriginalDate.toLocaleString(
     lang,
-    options,
+    { ...options,
+      timeZone: 'UTC'
+    },
   );
 };
 

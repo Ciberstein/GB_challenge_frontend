@@ -5,6 +5,10 @@ import { Table } from '../../../elements/user/Table';
 import Modal from '../../../elements/user/Modal';
 import { Button } from '../../../elements/user/Button';
 import { useForm } from 'react-hook-form';
+import api from '../../../../api/axios';
+import Swal from 'sweetalert2';
+import { setLoad } from '../../../../store/slices/loader.slice';
+import appError from '../../../../utils/appError';
 
 export const ReservesPage = () => {
 
@@ -18,9 +22,55 @@ export const ReservesPage = () => {
     dispatch(reservesThunk())
   }, []);
 
-  const submit = async () => {
+  const deleteConfirm = () => {
+    Swal.fire({
+      title: "Confirmar",
+      text: "¿Está seguro que desea cancelar esta reservación?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Si, cancelar"
+    }).then((result) => {
+      if (result.isConfirmed)
+        submit()
+    });
+  };
 
-  }
+  const submit = async () => {
+    dispatch(setLoad(false));
+    const url = `/api/v1/events/reserve/${selected?.id}`;
+
+    await api.delete(url)
+      .then((res) => {
+        dispatch(reservesThunk());
+        Swal.fire({
+          toast: true,
+          position: 'bottom-right',
+          icon: 'success',
+          text: res.data.message,
+          showConfirmButton: false,
+          timer: 5000,
+          timerProgressBar: true,
+        });
+      })
+      .catch((err) => {
+        appError(err)
+        Swal.fire({
+          toast: true,
+          position: 'bottom-right',
+          icon: 'error',
+          text: err.response.data.message,
+          showConfirmButton: false,
+          timer: 5000,
+          timerProgressBar: true,
+        });
+      })
+      .finally(() => {
+        setOpen(false);
+        dispatch(setLoad(true));
+      })
+  };
 
   const header = [
     {
@@ -52,7 +102,7 @@ export const ReservesPage = () => {
           <h1 className="text-xl font-medium">{selected?.title}</h1>
           <img src={`https://picsum.photos/id/${selected?.id}/600/400`} className="rounded-lg" />
           <p>{selected?.description}</p>
-          <form onSubmit={handleSubmit(submit)}>
+          <form onSubmit={handleSubmit(deleteConfirm)}>
             <Button color="red" type="submit" className="w-full">
               Cancelar reserva
             </Button>
