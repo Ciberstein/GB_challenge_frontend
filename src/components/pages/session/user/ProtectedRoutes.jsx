@@ -1,8 +1,8 @@
 import { Outlet } from 'react-router-dom';
 import { PosAuthLayout } from '../../../layouts/PosAuthLayout';
-import { Landing } from '../../Landing';
 import { useContext } from 'react';
 import AuthContext from '../../../../context/AuthContext';
+import { LoginPage } from '../../auth/login/LoginPage';
 
 export const ProtectedRoutes = () => {
 
@@ -15,5 +15,5 @@ export const ProtectedRoutes = () => {
         </PosAuthLayout>
       );
   
-    return <Landing />;
+    return <LoginPage />;
   };

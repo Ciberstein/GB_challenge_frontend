@@ -12,7 +12,7 @@ import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
 
 
-export const RegisterForm = ({ setAccount, firebase }) => {
+export const RegisterForm = ({ setAccount }) => {
 
   const [hide1, setHide1] = useState(true);
   const [hide2, setHide2] = useState(true);
@@ -28,11 +28,6 @@ export const RegisterForm = ({ setAccount, firebase }) => {
     const url = "/api/v1/auth/register";
 
     let formData = data;
-
-    if(firebase) {
-      formData.email = firebase.email;
-      formData.email_verified = firebase.email_verified;
-    }
 
     await api.post(url, formData)
       .then((res) => { 
@@ -72,7 +67,6 @@ export const RegisterForm = ({ setAccount, firebase }) => {
           id="first_name"
           name="first_name"
           label="Nombre"
-          defaultValue={firebase ? firebase.name.split(" ")[0] : ""}
           placeholder={"Ej. Juan"}
           register={{
             function: register,
@@ -93,7 +87,6 @@ export const RegisterForm = ({ setAccount, firebase }) => {
           id="last_name"
           name="last_name"
           label="Apellido"
-          defaultValue={firebase ? firebase.name.split(" ")[1] : ""}
           placeholder={"Ej. Pérez"}
           register={{
             function: register,
@@ -110,44 +103,31 @@ export const RegisterForm = ({ setAccount, firebase }) => {
           }}
         />
         <div className="sm:col-span-2">
-          { firebase ?
-              <Input
-                icon={<EnvelopeIcon className="size-6"/>}
-                id="email"
-                name="email"
-                type="email"
-                label={"Correo electrónico"}
-                placeholder={"username@domain.com"}
-                defaultValue={firebase.email}
-                disabled={true}
-              />
-            :
-              <Input
-                icon={<EnvelopeIcon className="size-6"/>}
-                id="email"
-                name="email"
-                type="email"
-                label={"Correo electrónico"}
-                placeholder={"username@domain.com"}
-                register={{
-                  function: register,
-                  errors: {
-                    function: errors,
-                    rules: {
-                      required: 'Email is required',
-                      validate: {
-                        isEmailValid: (value) => {
-                          if (!isEmailValid(value)) {
-                            return 'Invalid email format';
-                          }
-                          return true;
-                        },
-                      },
+          <Input
+            icon={<EnvelopeIcon className="size-6"/>}
+            id="email"
+            name="email"
+            type="email"
+            label={"Correo electrónico"}
+            placeholder={"username@domain.com"}
+            register={{
+              function: register,
+              errors: {
+                function: errors,
+                rules: {
+                  required: 'Email is required',
+                  validate: {
+                    isEmailValid: (value) => {
+                      if (!isEmailValid(value)) {
+                        return 'Invalid email format';
+                      }
+                      return true;
                     },
                   },
-                }}
-              />
-            }
+                },
+              },
+            }}
+          />
         </div>
         <Input
           icon={<LockClosedIcon className="size-6" />}

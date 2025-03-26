@@ -10,9 +10,6 @@ import { useDispatch } from 'react-redux';
 import api from '../../../../../api/axios';
 import appError from '../../../../../utils/appError';
 import Swal from 'sweetalert2';
-import { GoogleIcon } from '../../../../../assets/GoogleIcon';
-import { signInWithPopup } from 'firebase/auth'
-import { auth, googleProvider } from '../../../../../utils/firebaseConfig';
 
 export const LoginForm = ({ setAccount }) => {
 
@@ -58,15 +55,6 @@ export const LoginForm = ({ setAccount }) => {
       })
       .finally(() => dispatch(setLoad(true)));
   }
-
-  const google = async () => {
-    try {
-      const res = await signInWithPopup(auth, googleProvider);
-      await firebase(res.user.accessToken)
-    } catch (err) {
-      appError(err);
-    }
-  };
 
   const submit = async (data) => {
     dispatch(setLoad(false));
@@ -151,21 +139,9 @@ export const LoginForm = ({ setAccount }) => {
             }
           />
         </div>
-        <div className="grid grid-cols-1 gap-4">
-          <Button type="submit" size="lg">
-            Ingresar
-          </Button>
-          <div className="flex gap-2 items-center justify-center">
-            <hr className="flex-grow border-black/20 dark:border-gray-500"/>
-            <span className="text-xs text-center uppercase font-medium text-black/50 dark:text-gray-500">
-                {"Or log in with"}
-            </span>
-            <hr className="flex-grow border-black/20 dark:border-gray-500"/>
-          </div>
-          <Button type="button" size="xl" variant="outline" className="flex justify-center" onClick={google}>
-            <GoogleIcon />
-          </Button>
-        </div>
+        <Button type="submit" size="lg">
+          Ingresar
+        </Button>
       </form>
     </div>
   )

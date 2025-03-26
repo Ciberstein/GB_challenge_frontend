@@ -8,14 +8,11 @@ export const RegisterPage = () => {
 
   const [account, setAccount] = useState(false);
 
-  const location = useLocation();
-  const data = location.state && location.state.data;
-
   return (
     <PreAuthLayout>
       { account ? 
         <CodeValidation account={account} /> :
-        <RegisterForm setAccount={setAccount} firebase={data}/>
+        <RegisterForm setAccount={setAccount}/>
       }
     </PreAuthLayout>
   )
